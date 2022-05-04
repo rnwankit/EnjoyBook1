@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "231740187987",
+    "firebase_url": "https://enjoybook-efaae.firebaseio.com",
+    "project_id": "enjoybook-efaae",
+    "storage_bucket": "enjoybook-efaae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231740187987:android:0fcd4dc6e41890bd2feda6",
+        "android_client_info": {
+          "package_name": "com.enjoybooks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231740187987-uff7jmfos5fdr2n91scs46v3pf1tngp3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.enjoybooks",
+            "certificate_hash": "162c10f545e90b85341e76057b26892efdb1f433"
+          }
+        },
+        {
+          "client_id": "231740187987-1ppubvrhl3v4jecp97vneld3dot4ko86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm5uxOBDYLHEIKIf-8283fxAAvHSAUmfc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231740187987-1ppubvrhl3v4jecp97vneld3dot4ko86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231740187987:android:2ca0325590e6f54e2feda6",
+        "android_client_info": {
+          "package_name": "com.learnredux"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231740187987-1ppubvrhl3v4jecp97vneld3dot4ko86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm5uxOBDYLHEIKIf-8283fxAAvHSAUmfc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231740187987-1ppubvrhl3v4jecp97vneld3dot4ko86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

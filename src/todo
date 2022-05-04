@@ -1,0 +1,193 @@
+18/09/2020
+===========================================================================
+    - Home page bottom Issue
+    - Responsive Design of Home Page
+    - Improve design of drawer
+    - BottomBar Design Issue
+    - Book Image Display Design
+    - Exchange Button Click CheckBox Design
+- Remove all console and make proper code (Book, Home)
+
+
+- Book Buy/Sell Offer
+- Call/ Chat Option in Exchange Chat List
+- Notification Badge
+- Chat Notification 
+- Unread number of message
+  - Delete Chat
+- Clear Chat
+  - Selected Chat Delete
+- Search in Chat
+- Share Books in chat for easy communication
+
+
+- Sub-Category to Product List
+- Search Functionality
+- Sort Functionality
+
+
+- Share Button
+
+- Location dropdown Issue
+
+- Setting
+
+- Contact Us
+
+
+- Logo 
+- Splash Screen (Save Trees, Share Knowledge, Help People) with animation
+- Icon
+
+- Optimization
+- Unit Testing
+- Building and Deploying
+
+
+export const deleteChatList = (data, uid) => {
+  console.tron.log("deleteChatListdeleteChatListdeleteChatList", data, uid)
+ return async (dispatch) => {
+  try {
+    var db = await firestore()
+    var batch = db.batch()
+
+
+    data.forEach(async (doc) => {
+      console.tron.log("11111", doc)
+      const docRef = await firestore().collection("threads").doc(doc).get(); //automatically generate unique id
+      //var docData = await docRef.get()
+     // console.tron.log("docRef", docRef)
+      const X = await firestore().collection("threads").doc(doc)
+        X.update({delete: uid}).then(() => {console.tron.log("Update Successfully")})
+        // .delete()
+        // .then((a) => {console.tron.log("Delete Successfully", a)})
+        // .catch(error => console.tron.log("ERRR",error))
+      console.tron.log("docData", await (await firestore().collection("threads").doc(doc).get()).data().delete)
+      //await firestore().collection("threads").doc(doc).collection('MESSAGES').delete().then(() => {console.tron.log("DLT Successfully")}).catch(error => console.tron.log("ERRR",error));
+      if (await (await firestore().collection("threads").doc(doc).get()).data().delete !== 0) {
+      //  await firestore().collection("threads").doc(doc).collection('MESSAGES').delete()
+      docRef.delete().then(() => {console.tron.log("Delete Successfully")})
+      } else {
+        docRef.update({delete: uid}).then(() => {console.tron.log("Update Successfully")})
+      }
+    });
+  } catch (e) {
+   console.tron.log("Error in Deeee", e)
+  }
+ }
+}
+
+export const deleteChatList = (data, uid) => {
+  console.tron.log("deleteChatListdeleteChatListdeleteChatList", data)
+ return async (dispatch) => {
+  try {
+    var db = await firestore()
+    var batch = db.batch()
+
+    await data.forEach(async (doc) => {
+      console.tron.log("11111", doc)
+      var docRef = db.collection("threads").doc(doc); //automatically generate unique id
+      if (await (await firestore().collection("threads").doc(doc).get()).data().delete !== 0) {
+        batch.delete(docRef);
+        batch.commit()
+      } else {
+        await firestore().collection("threads").doc(doc)
+        .update({delete: uid}).then(() => {console.tron.log("Update Successfully")})
+      }
+      console.tron.log("222222", docRef)
+       
+      console.tron.log("333333", batch)  
+    });
+
+    
+  } catch (e) {
+   console.tron.log("Error in Deeee", e)
+  }
+ }
+}
+
+//getting data from sub collection
+let c = await (firestore().collection("threads").doc(doc)).collection('MESSAGES').get()
+        console.tron.log("MESSAGE REF", c)
+
+
+//delete MESSAGES
+export const deleteChatList = (data, uid) => {
+  console.tron.log("deleteChatListdeleteChatListdeleteChatList", data)
+ return async (dispatch) => {
+  try {
+    var db = await firestore()
+
+    await data.forEach(async (doc) => {
+      let threadData = await (firestore().collection("threads").doc(doc)).collection('MESSAGES').get()
+        .then((snapshot) => {
+          console.tron.log("snapshot", snapshot.docs)
+          if (snapshot.size == 0) {
+              return 0;
+          }
+
+          var batch = db.batch();
+          snapshot.docs.forEach((doc) => {
+            console.tron.log("doc", doc)
+              batch.delete(doc.ref);
+          });
+
+          batch.commit().then(() => {
+              console.tron.log("commit", snapshot.size)
+          });
+      })
+
+      console.tron.log("threadData", threadData)
+    })
+  } catch (e) {
+   console.tron.log("Error in Deeee", e)
+  }
+ }
+}
+
+
+//delete thread and MESSAGES
+export const deleteChatList = (data, uid) => {
+  console.tron.log("deleteChatListdeleteChatListdeleteChatList", data)
+ return async (dispatch) => {
+  try {
+    var db = await firestore()
+
+    await data.forEach(async (doc) => {
+      var docRef = db.collection("threads").doc(doc); //automatically generate unique id
+      if (await (await firestore().collection("threads").doc(doc).get()).data().delete !== 0) {
+        var batch1 = db.batch();
+        batch1.delete(docRef);
+        batch1.commit()
+      } else {
+        await firestore().collection("threads").doc(doc)
+        .update({delete: uid}).then(() => {console.tron.log("Update Successfully")})
+      }
+      
+      let threadData = await (firestore().collection("threads").doc(doc)).collection('MESSAGES').get()
+        .then((snapshot) => {
+          console.tron.log("snapshot", snapshot.docs)
+          if (snapshot.size == 0) {
+              return 0;
+          }
+
+          var batch = db.batch();
+          snapshot.docs.forEach((doc) => {
+            console.tron.log("doc", doc)
+              batch.delete(doc.ref);
+          });
+
+          batch.commit().then(() => {
+              console.tron.log("commit", snapshot.size)
+          });
+      })
+
+      console.tron.log("threadData", threadData)
+    })
+  } catch (e) {
+   console.tron.log("Error in Deeee", e)
+  }
+ }
+}
+
+navigation.state.routes[0].params.itemDelete === undefined ? navigation.state.routes[0].params.itemDelete.length > 0 ? navigation.state.routes[0].params.itemDelete.length : 0 : navigation.state.routes[0].params.itemDelete

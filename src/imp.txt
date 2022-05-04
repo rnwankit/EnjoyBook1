@@ -1,0 +1,59 @@
+Remove all console.log find and replace
+console.log.*$
+
+cd android && ./gradlew clean
+
+Open Android Emulator
+cd C:\Users\{computer_user_name}\AppData\Local\Android\Sdk\emulator
+emulator -list-avds
+emulator -avd <YOUR EMULATOR NAME>
+emulator -avd Pixel_3_API_28
+emulator -avd 5.1_WVGA_API_28
+
+2 times in sell
+
+exchange list for receiver
+
+Buy Sell Ex  receiver not get Ex Sell 2 time
+
+Book img or profile pic missing
+
+
+git
+===================
+git init
+git status
+git add .
+git commit -m "first commit"
+git log --oneline
+
+Checking out a file from an earlier commit
+To check out the index.html from the second commit, find the number of the second commit using the git log, and then type the following at the prompt:
+    git checkout <second commit's number> index.html
+Resetting the Git repository
+To discard the effect of the previous operation and restore index.html to its state at the end of the third commit, type:
+    git reset HEAD index.html
+Then type the following at the prompt:
+    git checkout -- index.html
+You can also use git reset to reset the staging area to the last commit without disturbing the working directory.
+
+
+Reactotron Custom Command
+============
+Reactotron.onCustomCommand({
+    command: "Category",
+    handler: () => {
+    this.props.navigation.navigate("SubCategories", {catId: '07CSFKmmOsUY20RQ8md9', catName: 'Acedemic'})
+    } ,
+    title: "Category1",
+    description: "Direct Category",
+})
+
+Reactotron.onCustomCommand({
+    command: "ExchangeChat",
+    handler: () => {
+    this.props.navigation.navigate("SubCategories", {catId: '07CSFKmmOsUY20RQ8md9', catName: 'Acedemic'})
+    } ,
+    title: "ExchangeChat",
+    description: "Direct ExchangeChat",
+})
