@@ -70,7 +70,7 @@ export default class App extends React.Component<Props> {
     <PersistGate loading={null} persistor={persistStore.persistor}>
      <MenuProvider>
       <MyNavigation />
-      <PushController/>
+      {/* <PushController/> */}
      </MenuProvider>
     </PersistGate>
     {/*<View style={{flex:1}}>

@@ -21,7 +21,7 @@ export const createNewUser = (payload) => {
              .then(confirmResult =>  {dispatch({type: "OTP", payload: confirmResult})})
              .catch(error => {dispatch({type: "Error", payload: error})});
         } catch (e) {
-            alert("Error: ",e);
+            alert("Error1: ",e);
         }
     }
 }
@@ -41,7 +41,7 @@ export const signOut = (uid, fcmToken) => {
 
             AsyncStorage.clear()
         } catch (e) {
-            alert("Error: ",e);
+            alert("Error2: ",e);
         }
     }
 }
@@ -52,10 +52,11 @@ export const otpSuccess = (confirmResult, codeInput) =>  {
         try {
             await confirmResult.confirm(codeInput)
              .then((user) => {
+                 console.log("FFFFFFFFFFFrom Otp Success", user.user.uid)
                  if (user) {
                      AsyncStorage.setItem('userToken', "true");
-                     AsyncStorage.setItem('uid', user.uid);
-                     dispatch({type: "Success", payload: {user: user, uid: user.uid}})
+                     AsyncStorage.setItem('uid', user.user.uid);
+                     dispatch({type: "Success", payload: {user: user, uid: user.user.uid}})
                  }
              })
              .catch(error => dispatch({type: "Error", payload: error}));
@@ -69,8 +70,8 @@ export const signupSuccess = (user) =>  {
     return async (dispatch) => {
         try {
             AsyncStorage.setItem('userToken', "true");
-            AsyncStorage.setItem('uid', user.uid);
-            dispatch({type: "Success", payload: {user: user, uid: user.uid}})
+            AsyncStorage.setItem('uid', user.user.uid);
+            dispatch({type: "Success", payload: {user: user, uid: user.user.uid}})
         } catch (e) {
             dispatch({type: "Error", payload: e})}
     }

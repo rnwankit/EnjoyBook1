@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "231740187987-uff7jmfos5fdr2n91scs46v3pf1tngp3.apps.googleusercontent.com",
+          "client_id": "231740187987-8moucf02ai5ktkd436je5stetceiappj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.enjoybooks",
-            "certificate_hash": "162c10f545e90b85341e76057b26892efdb1f433"
+            "certificate_hash": "91e6c2527bebfaa25792ad441db56f8139ec391a"
           }
         },
         {

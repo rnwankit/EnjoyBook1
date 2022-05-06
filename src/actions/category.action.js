@@ -23,7 +23,7 @@ export const get_category_list = () => {
      { dispatch({type: "CategoryList", payload: items}) }
     })
   } catch (e) {
-   alert("Error: ", e);
+   alert("Error3: ", e);
   }
  }
 }

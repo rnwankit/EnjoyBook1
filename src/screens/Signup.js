@@ -280,9 +280,10 @@ class Signup extends ValidationComponent {
    createUser.confirmResult.confirm(codeInput)
     .then((user) => {
      if (user){
+       console.log("In ccccccc", user);
       this.setState({ user: user });
-      this.updateDevice(user.uid)
-      this.addUser(user.uid, this.state.callingCodeAndPhone, this.state.location)
+      this.updateDevice(user.user.uid)
+      this.addUser(user.user.uid, this.state.callingCodeAndPhone, this.state.location)
       this.setIsLoading(true)
       this.props.dispatch(signupSuccess(user));
      }

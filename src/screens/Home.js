@@ -68,6 +68,8 @@ class Home extends Component {
      width,
      height
     }
+
+    // AsyncStorage.setItem('uid', 'J5x6ltQG4Tg1LKQxN1N8a8EH1Iw1');
   }
 
  storeRowRef(rowRef) {
