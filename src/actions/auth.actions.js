@@ -41,7 +41,7 @@ export const signOut = (uid, fcmToken) => {
 
             AsyncStorage.clear()
         } catch (e) {
-            alert("Error2: ",e);
+            alert("Error2: ",e);  
         }
     }
 }

@@ -4,32 +4,32 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 export default class AuthLoading extends React.Component {
 
- constructor() {
-  super();
-  this._bootstrap();
- }
+    constructor() {
+        super();
+        this._bootstrap();
+    }
 
- _bootstrap = async () => {
+    _bootstrap = async () => {
 
-  const userToken = await AsyncStorage.getItem('userToken');
-  console.log("userToken from authloading", userToken)
-  this.props.navigation.navigate(userToken ? 'Home' : 'Login');
- }
+        const userToken = await AsyncStorage.getItem('userToken');
+        console.log("userToken from authloading", userToken)
+        this.props.navigation.navigate(userToken ? 'Home' : 'Signup');
+    }
 
- render() {
-  return (
-   <View style={styles.container}>
-    <ActivityIndicator />
-    <StatusBar barStyle="default" />
-   </View>
-  )
- }
+    render() {
+        return (
+            <View style={styles.container}>
+                <ActivityIndicator />
+                <StatusBar barStyle="default" />
+            </View>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
- container: {
-  flex: 1,
-  alignItems: 'center',
-  justifyContent: 'center',
- },
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });

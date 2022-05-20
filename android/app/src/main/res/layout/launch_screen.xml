@@ -5,4 +5,10 @@
   android:layout_height="match_parent"
   android:background="@drawable/background_splash"
   android:orientation="vertical">
+
+  <TextView
+            android:text="Hira Vyapar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvExVin" />
 </LinearLayout>

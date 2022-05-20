@@ -2,9 +2,9 @@ import {theme} from './index';
 import { Dimensions } from 'react-native';
 
 const colors = {
- accent: "#BA000D",
- primary: "#6B9B36",
- primaryLight: 'rgba(107,155,54, 0.7)',
+ accent: "#7b5500",
+ primary: "#CE9B32",
+ primaryLight: '#7b5500',
  tertiary: "#FFE358",
  black: "#000000",
  white: "#FFFFFF",
@@ -20,7 +20,7 @@ const screenHeight = Dimensions.get('window').height;
 const sizes = {
  // global sizes
  base: 16,
- //font: 14,
+ //font: 14, 
  radius: 4,
  //padding: 25,
 

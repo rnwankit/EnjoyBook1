@@ -3,7 +3,9 @@ import {Image, ImageBackground, TouchableOpacity} from 'react-native';
 import {theme} from '../constants';
 import {Block, Text} from './index';
 import Entypo from 'react-native-vector-icons/Entypo';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import { NavigationActions, StackActions } from 'react-navigation';
 
 class BottomBar extends Component {
@@ -12,31 +14,36 @@ class BottomBar extends Component {
   console.log("Bottttt", onPress)
   return (
    <Block style={{
-    position: 'absolute', zIndex: 999, elevation: 3,  left: 0, right: 0, bottom: 0, width: '100%', 
-    justifyContent: 'center', alignItems: 'center'
+    position: 'absolute', zIndex: 999, left: 0, right: 0, bottom: 0, width: '100%', height: 60,
+     backgroundColor: theme.colors.primary
    }}>
-    <ImageBackground
-     source={require('../assets/extra/bb.png')}
-     style={{
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      height: 52,
-      border:0, 
-      width: '100%',
-     }}
-    >
+    
       <Block row
-        style={{justifyContent: 'space-around'}}
+        style={{justifyContent: 'space-around', top: 4}}
       >
+        <TouchableOpacity 
+          style={{zIndex: 9999, elevation: 4, justifyContent: 'center'}} 
+          title={"My Books"} 
+          onPress={() => onPress.navigate("MyBooks")}
+        >
+          <FontAwesome name="diamond" size={24} style={[{ color:  mybooks }, {left: 30}]} />
+          <Text caption color={"#FFF"} style={[{ color:  mybooks },{marginTop: 4}]}>My Diamond</Text>
+        </TouchableOpacity>
         <TouchableOpacity 
           style={{zIndex: 9999, elevation: 4,}} 
           title={"My Books"} 
           onPress={() => onPress.navigate("MyBooks")}
         >
-          <Entypo name="book" size={24} style={[{ color:  mybooks }, {top: 4, }]} />
-          <Text caption color={"#FFF"} style={[{ color:  mybooks },{marginTop: 4, left: -16}]}>My Books</Text>
+          <AntDesign name="shoppingcart" size={28} style={[{ color:  mybooks }, {top: 4, }]} />
+          <Text caption color={"#FFF"} style={[{ color:  mybooks },{marginTop: 4}]}>Buy</Text>
+        </TouchableOpacity>
+        <TouchableOpacity 
+          style={{zIndex: 9999, elevation: 4,}} 
+          title={"My Books"} 
+          onPress={() => onPress.navigate("MyBooks")}
+        >
+          <Entypo name="export" size={24} style={[{ color:  mybooks }, {top: 4,}]} />
+          <Text caption color={"#FFF"} style={[{ color:  mybooks },{marginTop: 8}]}>Sell</Text>
         </TouchableOpacity>
         <TouchableOpacity 
           style={{zIndex: 9999, elevation: 4, }} 
@@ -51,12 +58,12 @@ class BottomBar extends Component {
           //           ]
           //         }));}}
         >
-          <Ionicons style={[{ color: chat }, {top: 6,}]} name="md-chatbubbles" size={24}/>
-          <Text caption color={"#FFF"} style={[{ color:  mybooks },{left: -2, marginTop: 4}]}>Chat</Text>
+          <AntDesign style={[{ color: chat }, {top: 6, left: 18}]} name="calculator" size={24}/>
+          <Text caption color={"#FFF"} style={[{ color:  mybooks },{left: -2, marginTop: 8}]}>Calculator</Text>
         </TouchableOpacity>
       </Block>
-    </ImageBackground>
-    <TouchableOpacity
+    
+    {/* <TouchableOpacity
      onPress={() => onPress.navigate("AddProduct")}>
       <Image 
         style={{
@@ -66,7 +73,7 @@ class BottomBar extends Component {
         }} 
         source={require('../assets/extra/FAB.png')} 
       />
-    </TouchableOpacity>
+    </TouchableOpacity> */}
    </Block>
   );
  }

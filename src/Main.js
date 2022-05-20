@@ -36,7 +36,7 @@ class Main extends Component {
          </View>*/
             <View style={styles.container}>
                 <StatusBar
-                    backgroundColor="#1c313a"
+                    backgroundColor="#CE9B32"
                     barStyle="light-content"
                 />
                 <Screens
