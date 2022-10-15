@@ -3,7 +3,7 @@ import { Dimensions } from 'react-native';
 
 const colors = {
  accent: "#7b5500",
- primary: "#CE9B32",
+ primary: "#7b4c33", 
  primaryLight: '#7b5500',
  tertiary: "#FFE358",
  black: "#000000",

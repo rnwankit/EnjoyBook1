@@ -132,9 +132,9 @@ class Signup extends ValidationComponent {
 
   renderPhoneNumberInput() {
     return (
-      <View style={{ paddingHorizontal: 20, flex: 1, justifycontent: 'center' }}>
+      <View style={{ paddingHorizontal: 20, flex: 1, justifycontent: 'center', backgroundColor: '#e9d9cb' }}>
         <Logo />
-        <Text color={colors.gray2} h3 style={{ alignSelf: 'flex-start', marginBottom: -16 }}>Name</Text>
+        <Text color={colors.gray2} h3 style={{ alignSelf: 'flex-start', marginBottom: -16 }}>Username</Text>
         <TextInput
           style={{
             width: theme.screenWidth - 43, marginTop: 15, borderRadius: 0, paddingBottom: 4,
@@ -144,81 +144,33 @@ class Signup extends ValidationComponent {
           }}
           defaultValue={this.state.name}
           value={this.state.name ? this.state.name : ''}
-          placeholder={"Please enter your name"}
+          placeholder={"Please enter username"}
           onChangeText={(name) => this.setState({ name })}
         />
         {this.isFieldInError('name') && this.getErrorsInField('name').map(errorMessage => <Text style={{ color: 'red' }}>{errorMessage}</Text>)}
-        <Text color={colors.gray2} h3 style={{ alignSelf: 'flex-start', marginTop: 24, marginBottom: -5 }}>Address</Text>
+        <Text color={colors.gray2} h3 style={{ alignSelf: 'flex-start', marginTop: 24, marginBottom: -5 }}>Password</Text>
         <TextInput
           style={{
-            width: theme.screenWidth - 43, marginTop: 15, borderRadius: 0, paddingBottom: 4,
+            width: theme.screenWidth - 43, marginTop: 15, marginBottom:20, borderRadius: 0, paddingBottom: 4,
             borderWidth: 0,
             borderBottomColor: colors.gray2,
             borderBottomWidth: StyleSheet.hairlineWidth,
           }}
+          secureTextEntry={true}
           defaultValue={this.state.location}
           value={this.state.location ? this.state.location : ''}
-          placeholder={"Please enter your address"}
+          placeholder={"Please enter password"}
           onChangeText={(location) => this.setState({ location })}
         />
-        <View
-          style={{
-            borderWidth: 0,
-            borderBottomColor: colors.gray2,
-            borderBottomWidth: StyleSheet.hairlineWidth,
-          }}
-        />
-        {this.isFieldInError('location') && this.getErrorsInField('location').map(errorMessage => <Text style={{ color: 'red' }}>{errorMessage}</Text>)}
-        <Text color={colors.gray2} h3 style={{ alignSelf: 'flex-start', marginBottom: -12, marginTop: 24, }}>Phone Number</Text>
-        <Block style={{ marginBottom: 40 }} flex={false}>
-          <Block flex={false} row>
-            <Block flex={false} center row style={styles.countryBox} >
-              <CountryPicker
-                countryCode={this.state.cca2} //display flag for onclick otherwise display "Select Country"
-                withFilter
-                withFlag
-                withFlagButton
-                withCountryNameButton
-                withAlphaFilter
-                withCallingCode
-                withEmoji
-                onSelect={(value) => this.selectCountry(value)}
-                translation='eng'
-                containerButtonStyle={{ marginBottom: 8 }}
-              />
-              <Text style={{ paddingVertical: 13, paddingTop: 0 }}>
-                +{this.state.callingCode}
-              </Text>
-            </Block>
-            <TextInput
-              style={{
-                width: theme.screenWidth - 110, marginTop: 15, borderRadius: 0, marginBottom: 10,
-                borderWidth: 0,
-                borderBottomColor: colors.gray2,
-                borderBottomWidth: StyleSheet.hairlineWidth,
-              }}
-              value={this.state.phone ? this.state.phone : ''}
-              defaultValue={this.state.phone}
-              keyboardType='numeric'
-              value={this.state.phone ? this.state.phone : ''}
-              placeholder={"Please enter your phone number"}
-              onChangeText={(value) => this.phoneWithCountryCode(this.state.callingCode, value)}
-            />
+        
+        <Button style={{backgroundColor: '#280606'}} isLoading={this.state.isLoading} onPress={this.onSubmit} title={"Login"} />
 
-          </Block>
-          {this.isFieldInError('phone') &&
-            this.getErrorsInField('phone')
-              .map(
-                errorMessage => <View style={{ marginTop: -10, marginBottom: 8 }}><Text style={{ color: 'red', marginLeft: 70, }}>{errorMessage}</Text></View>
-              )
-          }
-          <Text style={{ color: 'red', marginLeft: 70, }}>{this.state.errorPhone !== '' ? this.state.errorPhone : ''}</Text>
+        <Block center style={{ alignSelf: 'center', marginTop: 115, marginBottom: 16 }} flex={false} row>
+          <Text h2 gray>Don't have an account? </Text>
+          <Button textStyle={{ fontSize: 16, fontFamily: "Roboto-Medium" }} onlyText title={"Signup"}  />
         </Block>
-        <Button isLoading={this.state.isLoading} onPress={this.onSubmit} title={"SIGN UP"} small shadow />
-
-        <Block center style={{ alignSelf: 'center', marginTop: 40, marginBottom: 16 }} flex={false} row>
-          <Text h2 gray>Already have an account? </Text>
-          <Button textStyle={{ fontSize: 16, fontFamily: "Roboto-Medium" }} onlyText title={"Login"} onPress={() => this.props.navigation.navigate('Login')} />
+        <Block center style={{ alignSelf: 'center', marginTop: 10, marginBottom: 16 }} flex={false} row>
+          <Button textStyle={{ fontSize: 16, fontFamily: "Roboto-Medium" }} onlyText title={"Forgot password?"}  />
         </Block>
       </View>
     );

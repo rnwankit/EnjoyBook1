@@ -70,17 +70,20 @@ const AuthStack = createStackNavigator({
   //    header: null,
   //   }
   //  },
-  Signup: { screen: Signup },
   Login: {
     screen: Login,
   },
   TermsOfUse: { screen: TermsOfUse }
 }, {
   defaultNavigationOptions: {
-    headerTitleStyle: {
+    headerStyle: {
       color: colors.primary,
       font: fonts.header,
-      marginLeft: 0
+      marginLeft: 0,
+      backgroundColor: '#e9d9cb',
+      textAlign: 'center',
+      display: 'flex',
+      justifyContent: 'center'
     },
     cardStyle: { backgroundColor: '#FFFFFF' },
   }
