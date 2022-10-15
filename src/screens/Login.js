@@ -99,7 +99,7 @@ class Login extends ValidationComponent {
 
     renderPhoneNumberInput = () => {
         return (
-         <Block center container flex={false} style={{marginTop: 24}}>
+         <Block center container flex={false} style={{marginTop: 14, backgroundColor: '#000000'}}>
                 <Logo style={{marginTop: 54, marginBottom: 54}} />
                 <Text color={colors.gray2} h3 style={{alignSelf: 'flex-start', marginBottom: -16}}>Phone Number</Text>
                 <Block style={{marginBottom: 40}}  flex={false}>
