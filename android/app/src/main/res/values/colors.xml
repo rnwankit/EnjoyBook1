@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <color name="splashscreen_bg">#FFFFFF</color>
+    <color name="splashscreen_bg">#e9d9cb</color>
     <color name="app_bg">#FFFFFF</color>
-    <color name="statusBar_bg">#7b5500</color>
+    <color name="statusBar_bg">#815e45</color>
     <color name="white">#000</color>
 </resources>
